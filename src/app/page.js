@@ -100,13 +100,18 @@ export default function Home() {
 
   return (
     <div className="w-full flex items-start justify-between bg-gray-400">
-      <ul className="flex items-center flex-wrap gap-4 py-6 px-6">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 py-6 px-6">
         {foods.map((food, index) => (
           <li
             key={index}
-            className="p-2 w-[180px] border border-white rounded-md flex flex-col gap-4 bg-white"
+            className="p-2 w-full border border-white rounded-md flex flex-col gap-4 bg-white"
           >
-            <Image src={food.image} className="w-full h-[130px] rounded-md" />
+            <Image
+              priority
+              alt=""
+              src={food.image}
+              className="w-full h-[130px] rounded-md"
+            />
             <h2>{food.name}</h2>
             <div className="flex items-center justify-between">
               <p className="text-sm text-red-500 font-bold">
